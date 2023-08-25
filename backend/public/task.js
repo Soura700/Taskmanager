@@ -94,7 +94,7 @@ document.addEventListener("DOMContentLoaded", function () {
     // or updating the page dynamically.
 
     try {
-      const response = await fetch("http://localhost:5500/api/tasks/create", {
+      const response = await fetch("https://taskmanager-production-fcf0.up.railway.app/api/tasks/create", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -165,7 +165,7 @@ function createTaskElement(task) {
 // Assume you have a function to fetch tasks from your API
 
 async function fetchTasks() {
-  return fetch("http://localhost:5500/api/getTasks")
+  return fetch("https://taskmanager-production-fcf0.up.railway.app/api/getTasks")
     .then((res) => {
       // console.log(res); // Debugging the response status
       return res.json();
@@ -431,7 +431,7 @@ function appendTasksToSections(tasks) {
 
 async function updateTaskStatus(taskId, newStatus) {
   try {
-    const response = await fetch(`http://localhost:5500/api/tasks/${taskId}`, {
+    const response = await fetch(`https://taskmanager-production-fcf0.up.railway.app/api/tasks/${taskId}`, {
       method: "PUT",
       headers: {
         "Content-Type": "application/json",
@@ -477,7 +477,7 @@ document.addEventListener("DOMContentLoaded", function () {
     // or updating the page dynamically.
 
     try {
-      const response = await fetch("http://localhost:5500/api/tasks/" + selectedTaskId, {
+      const response = await fetch("https://taskmanager-production-fcf0.up.railway.app/api/tasks/" + selectedTaskId, {
         method: "PUT",
         headers: {
           "Content-Type": "application/json",
@@ -509,7 +509,7 @@ document.addEventListener("DOMContentLoaded", function () {
       const taskId = event.target.getAttribute("data-task-id");
       if (confirm("Are you sure you want to delete this task?")) {
         try {
-          const response = await fetch(`http://localhost:5500/api/tasks/${taskId}`, {
+          const response = await fetch(`https://taskmanager-production-fcf0.up.railway.app/api/tasks/${taskId}`, {
             method: "DELETE",
           });
 
